@@ -98,26 +98,17 @@ window.onload = function () {
   let classesDasLi = localStorage.getItem('classes');
   if (textoDasLi !== null) {
     textoDasLi = textoDasLi.split(',');
-  }
-  if (classesDasLi !== null) {
     classesDasLi = classesDasLi.split(',');
   }
   const elementoOl = document.createElement('ol');
   elementoOl.id = 'lista-tarefas';
   document.body.appendChild(elementoOl);
-
   const lista = document.getElementById('lista-tarefas');
+  const listaDeLi = document.getElementsByTagName('li');
   for (let index = 0; index < quantDeLi; index += 1) {
     const elementoIl = document.createElement('li');
     lista.appendChild(elementoIl);
-  }
-
-  const listaDeLi = document.getElementsByTagName('li');
-  for (let index = 0; index < listaDeLi.length; index += 1) {
     listaDeLi[index].innerText = textoDasLi[index];
-  }
-
-  for (let index = 0; index < listaDeLi.length; index += 1) {
     listaDeLi[index].classList = classesDasLi[index];
   }
 };
