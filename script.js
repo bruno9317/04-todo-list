@@ -70,23 +70,18 @@ const botao3 = document.getElementById('remover-finalizados');
 botao3.addEventListener('click', recebeClick5);
 
 function recebeClick6() {
-  let listaDeLi = document.getElementsByTagName('li');
+  const listaDeLi = document.getElementsByTagName('li');
   let quantDeLi = 0;
-  let textoDasLi = [];
-  let classesDasLi = [];
-
+  const textoDasLi = [];
+  const classesDasLi = [];
   quantDeLi = listaDeLi.length;
-
   for (let index = 0; index < listaDeLi.length; index += 1) {
     textoDasLi[index] = listaDeLi[index].innerText;
-  }
-
-  for (let index = 0; index < listaDeLi.length; index += 1) {
-    let listaDeClass = document.getElementsByTagName('li')[index].classList;
-    if(listaDeClass.length > 0){
+    const listaDeClass = document.getElementsByTagName('li')[index].classList;
+    if (listaDeClass.length > 0) {
       classesDasLi[index] = document.getElementsByTagName('li')[index].classList.value;
-    }else{
-      classesDasLi[index] = "n";
+    } else {
+      classesDasLi[index] = 'n';
     }
   }
   localStorage.setItem('Quantidade-de-li', quantDeLi);
@@ -97,37 +92,32 @@ function recebeClick6() {
 const botao4 = document.getElementById('salvar-tarefas');
 botao4.addEventListener('click', recebeClick6);
 
-
-
-
 window.onload = function () {
-  let quantDeLi = parseInt(localStorage.getItem('Quantidade-de-li'));
-  let textoDasLi = localStorage.getItem('innerText-li')
+  const quantDeLi = parseInt(localStorage.getItem('Quantidade-de-li'));
+  let textoDasLi = localStorage.getItem('innerText-li');
   let classesDasLi = localStorage.getItem('classes');
-  if (textoDasLi !== null){
-  textoDasLi = textoDasLi.split(',');
+  if (textoDasLi !== null) {
+    textoDasLi = textoDasLi.split(',');
   }
-  if (classesDasLi !== null){
-  classesDasLi = classesDasLi.split(',');
+  if (classesDasLi !== null) {
+    classesDasLi = classesDasLi.split(',');
   }
-  console.log(classesDasLi);
-    
   const elementoOl = document.createElement('ol');
   elementoOl.id = 'lista-tarefas';
   document.body.appendChild(elementoOl);
 
   const lista = document.getElementById('lista-tarefas');
-  for (let index = 0; index < quantDeLi; index += 1){
-  const elementoIl = document.createElement('li');
-  lista.appendChild(elementoIl);
+  for (let index = 0; index < quantDeLi; index += 1) {
+    const elementoIl = document.createElement('li');
+    lista.appendChild(elementoIl);
   }
 
-  let listaDeLi = document.getElementsByTagName('li');
-  for (let index = 0; index < listaDeLi.length; index += 1){
+  const listaDeLi = document.getElementsByTagName('li');
+  for (let index = 0; index < listaDeLi.length; index += 1) {
     listaDeLi[index].innerText = textoDasLi[index];
   }
 
-  for (let index = 0; index < listaDeLi.length; index += 1){
+  for (let index = 0; index < listaDeLi.length; index += 1) {
     listaDeLi[index].classList = classesDasLi[index];
   }
-}
+};
