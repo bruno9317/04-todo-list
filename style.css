@@ -5,3 +5,6 @@
 #lista-tarefas il {
   display: block;
 }
+.selected{
+  background-color: gray;
+}

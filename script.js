@@ -16,15 +16,11 @@ const botao = document.getElementById('criar-tarefa');
 botao.addEventListener('click', recebeClick);
 
 function recebeClick2(e){
- e.target.style.backgroundColor = 'grey';
-
+  let listaDeLi = document.getElementsByClassName('selected');
+  for(let index = 0; index < listaDeLi.length; index += 1){
+    console.log('entrou');
+    document.getElementsByClassName('selected')[index].classList.remove('selected');
+  }
+  
+  e.target.classList.add("selected");
 }
-// function criaBotao(){
-//     let listaDeItens = document.getElementsByTagName('li');
-//     let botoesLi = [];
-//     for(let index = 0; index < listaDeItens.length; index += 1){
-//         botoesLi[index] = listaDeItens[index];
-//         botoesLi[index].addEventListener('click', recebeClick2);
-//     }
-// }
-// criaBotao();
