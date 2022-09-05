@@ -69,6 +69,47 @@ function recebeClick5() {
 const botao3 = document.getElementById('remover-finalizados');
 botao3.addEventListener('click', recebeClick5);
 
+function recebeClick7() {
+  const selecionado = document.getElementsByClassName('selected')[0];
+  const listaDeLi = document.getElementsByTagName('li');
+  const lista = document.getElementById('lista-tarefas');
+  for (let index = 0; index < listaDeLi.length; index += 1) {
+    for (let index2 = 0; index2 < listaDeLi.length; index2 += 1) {
+      if (listaDeLi[index].classList[index2] === 'selected') {
+        lista.insertBefore(selecionado, lista.children[index - 1]);
+      }
+    }
+  }
+}
+
+const botao5 = document.getElementById('mover-cima');
+botao5.addEventListener('click', recebeClick7);
+
+function recebeClick8() {
+  const selecionado = document.getElementsByClassName('selected')[0];
+  const listaDeLi = document.getElementsByTagName('li');
+  const lista = document.getElementById('lista-tarefas');
+  for (let index = 0; index < listaDeLi.length; index += 1) {
+    const quantClasses = listaDeLi[index].classList;
+    for (let index2 = 0; index2 < quantClasses.length; index2 += 1) {
+      if (listaDeLi[index].classList[index2] === 'selected') {
+        return lista.insertBefore(selecionado, lista.children[index + 2]);
+      }
+    }
+  }
+}
+
+const botao6 = document.getElementById('mover-baixo');
+botao6.addEventListener('click', recebeClick8);
+
+function recebeClick9() {
+  const selecionado = document.getElementsByClassName('selected')[0];
+  selecionado.remove();
+}
+
+const botao7 = document.getElementById('remover-selecionado');
+botao7.addEventListener('click', recebeClick9);
+
 function recebeClick6() {
   const listaDeLi = document.getElementsByTagName('li');
   let quantDeLi = 0;
