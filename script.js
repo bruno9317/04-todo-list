@@ -38,3 +38,18 @@ function recebeClick() {
 
 const botao = document.getElementById('criar-tarefa');
 botao.addEventListener('click', recebeClick);
+
+function recebeClick4(){
+  let listaDeLi = document.getElementsByTagName('li');
+  for (let index = listaDeLi.length; index >= listaDeLi.length; index -= 1){
+    console.log(listaDeLi.length);
+    console.log(index);
+    if(listaDeLi.length > 0){
+      document.getElementsByTagName('li')[index - 1].remove();
+    }
+    listaDeLi = document.getElementsByTagName('li');
+  }
+}
+
+const botao2 = document.getElementById('apaga-tudo');
+botao2.addEventListener('click', recebeClick4);;
