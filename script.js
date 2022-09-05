@@ -10,17 +10,17 @@ function recebeClick2(e) {
   e.target.classList.add('selected');
 }
 
-function recebeClick3(e){
+function recebeClick3(e) {
   const listaDeLi = e.target.classList;
   let sera = false;
   for (let index = 0; index < listaDeLi.length; index += 1) {
-    if(listaDeLi[index] === 'completed'){
+    if (listaDeLi[index] === 'completed') {
       sera = true;
     }
   }
-  if(sera === true){
+  if (sera === true) {
     e.target.classList.remove('completed');
-  }else{
+  } else {
     e.target.classList.add('completed');
   }
 }
@@ -39,12 +39,12 @@ function recebeClick() {
 const botao = document.getElementById('criar-tarefa');
 botao.addEventListener('click', recebeClick);
 
-function recebeClick4(){
+function recebeClick4() {
   let listaDeLi = document.getElementsByTagName('li');
-  for (let index = listaDeLi.length; index >= listaDeLi.length; index -= 1){
+  for (let index = listaDeLi.length; index >= listaDeLi.length; index -= 1) {
     console.log(listaDeLi.length);
     console.log(index);
-    if(listaDeLi.length > 0){
+    if (listaDeLi.length > 0) {
       document.getElementsByTagName('li')[index - 1].remove();
     }
     listaDeLi = document.getElementsByTagName('li');
@@ -52,4 +52,4 @@ function recebeClick4(){
 }
 
 const botao2 = document.getElementById('apaga-tudo');
-botao2.addEventListener('click', recebeClick4);;
+botao2.addEventListener('click', recebeClick4);
