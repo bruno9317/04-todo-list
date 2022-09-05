@@ -1,13 +1,10 @@
-#criar-tarefa, #apaga-tudo {
+#criar-tarefa, #apaga-tudo, #remover-finalizados, #salvar-tarefas {
   background-color: grey;
   padding: 5px 10px;
 }
-#lista-tarefas il {
-  display: block;
-}
-.selected{
+.selected {
   background-color: gray;
 }
-.completed{
+.completed {
   text-decoration: line-through solid black;
 }
